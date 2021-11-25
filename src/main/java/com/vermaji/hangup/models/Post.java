@@ -1,11 +1,28 @@
 package com.vermaji.hangup.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "UserPost")
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
     private String userName;
     private String postCaption;
     private String postLikes;
     private String userProfile;
     private String postImageUrl;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Post() {
 
